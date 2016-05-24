@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 20)
+    @posts = Post.paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = find_post
+    @post = Post.new(post_params)
     if @post.save
       flash[:success] = "Post is saved!"
       redirect_to @post
@@ -30,6 +30,7 @@ class PostsController < ApplicationController
     @post = find_post
     if @post.update_attributes(post_params)
       flash[:sucess] = "Post successfully updated!"
+      redirect_to @post
     else
       render 'edit'
     end

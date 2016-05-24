@@ -1,1 +1,5 @@
-= render 'post', post: @post
+%h1=@post.title
+
+= link_to 'Edit post', edit_post_path
+
+%p= @post.content.html_safe

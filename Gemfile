@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'
 gem 'haml-rails'
+gem 'faker'
 
 group :development, :test do
   gem 'sqlite3'
@@ -22,7 +23,6 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
-  gem 'spring'
 end
 
 group :production do
