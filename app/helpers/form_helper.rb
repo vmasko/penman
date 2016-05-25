@@ -10,7 +10,7 @@ module FormHelper
   end
 
   def current_schedule(post)
-    if @post.published_at > Time.now
+    if @post.published_at && @post.published_at > Time.now
       return ' (currently set to ' + @post.published_at.strftime('%H:%M %d %B %Y') + ')'
     end
     ''
