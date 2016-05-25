@@ -23,8 +23,8 @@
     = f.label :remove_image, 'Remove image'
     %br
 
-  = f.label :schedule, 'Schedule post publication'
-  = f.select :schedule, list_schedule, { prompt: 'Select date' }, { class: 'form-control' }
+  = f.label :published_at, 'Schedule post publication' + current_schedule(@post)
+  = f.select :published_at, schedule, { prompt: 'Select date' }, { class: 'form-control' }
 
   = f.check_box :publish, checked: true
   = f.label :publish, 'Publish!'

@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20160525063025) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.datetime "schedule"
+    t.datetime "published_at"
   end
 
 end

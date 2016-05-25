@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.published.includes(:categories).paginate(page: params[:page], per_page: 10)
+    @posts = Post.actual_and_published.includes(:categories)
+      .paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -14,7 +15,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    if @post.save
+    if @post.save!
       flash[:success] = "Post is saved!"
       redirect_to @post
     else
@@ -38,6 +39,7 @@ class PostsController < ApplicationController
 
   def destroy
     find_post.destroy
+    flash[:success] = "Post deleted."
     redirect_to root_url
   end
 end
@@ -46,7 +48,7 @@ end
 
   def post_params
     params.require(:post).permit(:title, :content, :status, :image,
-      :remove_image, :schedule, :publish, { category_ids: [] })
+      :remove_image, :published_at, :publish, { category_ids: [] })
   end
 
   def find_post
