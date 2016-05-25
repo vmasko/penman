@@ -1,6 +1,6 @@
 .post
   %h2= link_to post.title, post
-  %p.text
+  %p
     = image_tag post.image.url(:medium) if post.image?
     = truncate(post.content.html_safe, length: 300, separator: '.', omission: '.')
     = link_to 'Read more', post if post.content.length > 300

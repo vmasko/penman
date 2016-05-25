@@ -34,7 +34,6 @@ ul.navbar-nav {
 /* posts */
 
 ul.info {
-  margin-top: 10px;
   list-style: none;
   padding: 0px;
   color: #4d4d4d;
@@ -73,7 +72,9 @@ ul.info {
 }
 
 .post {
+  margin-top: 30px;
   p {
+    margin-bottom: 20px;
     img {
       display: block;
       margin: 0px auto 10px auto;

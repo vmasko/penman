@@ -2,6 +2,8 @@ class Post < ActiveRecord::Base
   RULES = { /(?<=\s)-(?=\s)/ => '—', /"(?=\b)/ => '«', /(?=\b)"/ => '»', /\n/ => '<br>' }
   attr_accessor :remove_image, :publish
 
+  scope :published, -> { where(status: 'published') }
+
   has_attached_file :image, styles: { medium: "400x400>", thumb: "200x200>" }
 
   has_and_belongs_to_many :categories

@@ -12,6 +12,10 @@
     { prompt: 'Select categories' }, { multiple: true, class: 'form-control' }
   %br
 
+  -if @post.image?
+    = image_tag @post.image.url(:medium)
+    %br
+
   = f.label :image, 'Upload an image'
   = f.file_field :image
   - if action_name == 'edit' && @post.image?

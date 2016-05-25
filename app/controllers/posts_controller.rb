@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.includes(:categories).paginate(page: params[:page], per_page: 10)
+    @posts = Post.published.includes(:categories).paginate(page: params[:page], per_page: 10)
   end
 
   def show

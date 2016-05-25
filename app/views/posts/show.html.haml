@@ -1,5 +1,6 @@
 %h1=@post.title
-%p.text
-  = image_tag @post.image.url(:medium) if @post.image?
-  = @post.content.html_safe
-= render 'post_info', post: @post
+.post
+  %p
+    = image_tag @post.image.url(:medium) if @post.image?
+    = @post.content.html_safe
+  = render 'post_info', post: @post
