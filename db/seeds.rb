@@ -14,6 +14,7 @@ end
   Post.create(
     title:   Faker::Hipster.sentence,
     content: Faker::Hipster.paragraph(10),
-    categories: Category.all.sample(2)
+    categories: Category.all.sample(2),
+    publish: '1'
     )
 end

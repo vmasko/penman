@@ -1,9 +1,7 @@
 .post
   %h2= link_to post.title, post
-  %p
+  %p.text
     = image_tag post.image.url(:medium) if post.image?
     = truncate(post.content.html_safe, length: 300, separator: '.', omission: '.')
     = link_to 'Read more', post if post.content.length > 300
-  %ul.info
-    %li='Status: ' + post.status if post.status
-    %li='Categories: ' + list_categories(post)
+  = render 'post_info', post: post

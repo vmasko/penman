@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 10)
+    @posts = Post.includes(:categories).paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -38,6 +38,7 @@ class PostsController < ApplicationController
 
   def destroy
     find_post.destroy
+    redirect_to root_url
   end
 end
 
@@ -45,7 +46,7 @@ end
 
   def post_params
     params.require(:post).permit(:title, :content, :status, :image,
-      :remove_image, { category_ids: [] })
+      :remove_image, :schedule, :publish, { category_ids: [] })
   end
 
   def find_post

@@ -1,0 +1,6 @@
+%ul.info
+  %li.control.edit=link_to 'Edit', edit_post_path(post)
+  %li.control.delete=link_to 'Delete', post, method: :delete, data: { confirm: 'You sure?' }
+  %li='ID: ' + post.id.to_s
+  %li='Status: ' + post.status
+  %li='Categories: ' + list_categories(post)

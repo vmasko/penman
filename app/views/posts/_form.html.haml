@@ -19,4 +19,11 @@
     = f.label :remove_image, 'Remove image'
     %br
 
+  = f.label :schedule, 'Schedule post publication'
+  = f.select :schedule, list_schedule, { prompt: 'Select date' }, { class: 'form-control' }
+
+  = f.check_box :publish, checked: true
+  = f.label :publish, 'Publish!'
+  %br
+
   = f.submit "Post!", class: 'btn btn-primary'

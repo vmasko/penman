@@ -34,12 +34,41 @@ ul.navbar-nav {
 /* posts */
 
 ul.info {
-  padding: 5px;
+  margin-top: 10px;
   list-style: none;
-  border: 1px solid #337AB7;
-  border-radius: 3px;
+  padding: 0px;
+  color: #4d4d4d;
   li {
+    display: inline;
     margin-right: 10px;
+  }
+  li.control {
+    margin-right: 2px;
+    padding: 4px;
+    border-radius: 3px;
+    a {
+      text-decoration: none;
+    }
+  }
+  li.control.edit {
+    background-color: #dff0d8;
+    a {
+      color: #468847;
+    }
+    &:hover {
+      padding: 3px;
+      border: 1px solid #468847;
+    }
+  }
+  li.control.delete {
+    background-color: #f2dede;
+    a {
+      color: #b94a48;
+    }
+    &:hover {
+      padding: 3px;
+      border: 1px solid #b94a48;
+    }
   }
 }
 
