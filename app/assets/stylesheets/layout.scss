@@ -5,7 +5,7 @@
 /* global */
 
 body {
-  padding-top: 50px;
+  padding-top: 60px;
 }
 
 label {
@@ -19,6 +19,7 @@ label {
 /* header */
 
 .navbar-brand {
+  margin-left: 10px;
   font-size: 30px;
   font-family: 'Pacifico', cursive;
   text-transform: lowercase;
@@ -39,5 +40,14 @@ ul.info {
   border-radius: 3px;
   li {
     margin-right: 10px;
+  }
+}
+
+.post {
+  p {
+    img {
+      display: block;
+      margin: 0px auto 10px auto;
+    }
   }
 }

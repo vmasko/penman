@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   def update
     @post = find_post
     if @post.update_attributes(post_params)
-      flash[:sucess] = "Post successfully updated!"
+      flash[:success] = "Post successfully updated!"
       redirect_to @post
     else
       render 'edit'
@@ -44,7 +44,7 @@ end
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :status, :image, :category_list)
+    params.require(:post).permit(:title, :content, :status, :image)
   end
 
   def find_post

@@ -12,6 +12,8 @@ gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'
 gem 'haml-rails'
 gem 'faker'
+gem 'mini_magick'
+gem 'paperclip'
 
 group :development, :test do
   gem 'sqlite3'
