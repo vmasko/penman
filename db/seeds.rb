@@ -6,6 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+%w(World Politics Travel Lifestyle).each do |name|
+  Category.find_or_create_by(name: name)
+end
+
 15.times do
-  Post.create(title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph(10))
+  Post.create(
+    title:   Faker::Hipster.sentence,
+    content: Faker::Hipster.paragraph(10),
+    categories: Category.all.sample(2)
+    )
 end

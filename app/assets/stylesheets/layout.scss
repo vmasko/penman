@@ -1,6 +1,43 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+/* global */
 
 body {
   padding-top: 50px;
+}
+
+label {
+  margin-top: 10px;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+/* header */
+
+.navbar-brand {
+  font-size: 30px;
+  font-family: 'Pacifico', cursive;
+  text-transform: lowercase;
+}
+
+ul.navbar-nav {
+  li {
+    margin-top: 7px;
+  }
+}
+
+/* posts */
+
+ul.info {
+  padding: 5px;
+  list-style: none;
+  border: 1px solid #337AB7;
+  border-radius: 3px;
+  li {
+    margin-right: 10px;
+  }
 }

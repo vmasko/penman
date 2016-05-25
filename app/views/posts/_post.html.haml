@@ -1,6 +1,7 @@
 .post
   %h2= link_to post.title, post
   %p
-    = truncate(post.content.html_safe, length: 300, separator: '.')
+    = truncate(post.content.html_safe, length: 300, separator: '.', omission: '.')
     = link_to 'Read more', post if post.content.length > 300
-    = post.status
+  %ul.info
+    %li='Status: ' + post.status if post.status

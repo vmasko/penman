@@ -44,7 +44,7 @@ end
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :status, :image)
+    params.require(:post).permit(:title, :content, :status, :image, :category_list)
   end
 
   def find_post

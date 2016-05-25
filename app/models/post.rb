@@ -1,11 +1,13 @@
 class Post < ActiveRecord::Base
   RULES = { /-/ => '—', /"(?=\b)/ => '«', /(?=\b)"/ => '»' }
 
+  has_and_belongs_to_many :categories
+
   validates :title, :content, presence: true
   validates :title, length: { minimum: 5 }
 
   default_scope -> { order(created_at: :desc) }
-  
+
   before_save :typographize
 
   def typographize
