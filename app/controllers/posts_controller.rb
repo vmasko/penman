@@ -44,7 +44,8 @@ end
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :status, :image)
+    params.require(:post).permit(:title, :content, :status, :image,
+      :remove_image, { category_ids: [] })
   end
 
   def find_post

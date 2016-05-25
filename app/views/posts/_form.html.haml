@@ -1,4 +1,4 @@
-= form_for @post do |f|
+= form_for @post, html: { multipart: true } do |f|
   = render 'shared/error_messages', object: f.object
 
   = f.label :title
@@ -6,6 +6,11 @@
 
   = f.label :content
   = f.text_area :content, rows: 15, class: 'form-control'
+
+  = f.label :category_ids, 'Categories'
+  = f.select :category_ids, Category.order(:name).map { |c| [c.name, c.id] },
+    { prompt: 'Select categories' }, { multiple: true, class: 'form-control' }
+  %br
 
   = f.label :image, 'Upload an image'
   = f.file_field :image
